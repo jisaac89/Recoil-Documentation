@@ -1,0 +1,13 @@
+{
+  "version": "0.0.0",
+  "globalDependencies": {
+    "classnames": "github:DefinitelyTyped/DefinitelyTyped/classnames/classnames.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a",
+    "react": "registry:dt/react#0.14.0+20160423065914",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
+  },
+  "dependencies": {
+    "es6-promise": "registry:npm/es6-promise#3.0.0+20160211003958",
+    "history": "registry:npm/history#2.0.0+20160406171533",
+    "react-router": "registry:npm/react-router#2.0.0+20160214194820"
+  }
+}
