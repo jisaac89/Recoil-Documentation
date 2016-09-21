@@ -84,7 +84,6 @@ export default class App extends React.Component<any, any> {
               rowIsSelectable="single"
               pageSize={SampleData.length}
               onRowSelect={this.gotoSlideIndex.bind(this)}
-              searchableKeys={['index']}
             />
           </Layer>
         </SlideIn>
