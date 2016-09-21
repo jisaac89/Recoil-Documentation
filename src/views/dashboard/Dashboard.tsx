@@ -13,7 +13,6 @@ interface S {}
 export default class Dashboard extends React.Component<P,S>{
     render() {
         const self = this;
-
         let gridProps = [
             {
                 "description": 'Provide a dataSource object to render',

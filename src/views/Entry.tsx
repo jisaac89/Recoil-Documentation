@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {observer} from 'mobx-react';
 import {appState} from '../state/_Store';
-
 import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../recoil/src/index';
 
 import App from './App';
