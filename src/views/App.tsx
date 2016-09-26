@@ -30,36 +30,23 @@ export default class App extends React.Component<any, any> {
 
     this.state = {
       slideIndex: 0,
-<<<<<<< HEAD
       showMenu: false,
       slideIndexs: []
-=======
-      showMenu: false
->>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
     }
   }
 
   gotoSlideIndex(n) {
     this.setState({
       slideIndex : n.index,
-<<<<<<< HEAD
       // showMenu: false
     })
-    this.state.slideIndexs.push(n)
-=======
-      showMenu: false
-    })
->>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
+    this.state.slideIndexs.push(n);
   }
 
   gotoSlideIndexNumber(n) {
     this.setState({
-      slideIndex : n,
-<<<<<<< HEAD
-      // showMenu: false
-=======
+      slideIndex : n,// showMenu: false
       showMenu: false
->>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
     })
   }
 
@@ -69,7 +56,6 @@ export default class App extends React.Component<any, any> {
     })
   }
 
-<<<<<<< HEAD
   menuTemplate(element) {
     return (
       <Button>a</Button>
@@ -87,11 +73,6 @@ export default class App extends React.Component<any, any> {
   render() {
 
   const self = this;
-=======
-  render() {
-
-    const self = this;
->>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
     const props = self.props;
     let state = self.state;
 
