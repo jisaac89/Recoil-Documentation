@@ -30,23 +30,36 @@ export default class App extends React.Component<any, any> {
 
     this.state = {
       slideIndex: 0,
+<<<<<<< HEAD
       showMenu: false,
       slideIndexs: []
+=======
+      showMenu: false
+>>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
     }
   }
 
   gotoSlideIndex(n) {
     this.setState({
       slideIndex : n.index,
+<<<<<<< HEAD
       // showMenu: false
     })
     this.state.slideIndexs.push(n)
+=======
+      showMenu: false
+    })
+>>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
   }
 
   gotoSlideIndexNumber(n) {
     this.setState({
       slideIndex : n,
+<<<<<<< HEAD
       // showMenu: false
+=======
+      showMenu: false
+>>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
     })
   }
 
@@ -56,6 +69,7 @@ export default class App extends React.Component<any, any> {
     })
   }
 
+<<<<<<< HEAD
   menuTemplate(element) {
     return (
       <Button>a</Button>
@@ -73,6 +87,11 @@ export default class App extends React.Component<any, any> {
   render() {
 
   const self = this;
+=======
+  render() {
+
+    const self = this;
+>>>>>>> fbb941eca3d1586cf7cd0331e1c789b8f28cc1a7
     const props = self.props;
     let state = self.state;
 
@@ -104,7 +123,7 @@ export default class App extends React.Component<any, any> {
           </Layer>
         </SlideIn>
         <Layer scrollY fill className="ptb20 p10">
-          <Transform  push="left" amount={"300px"} if={state.showMenu}>
+            <Transform  push="left" amount={"300px"} if={state.showMenu}>
             <Toolbar block>
               <Button simple iconPointer="left" icon={state.showMenu ? "times" : "bars"} onClick={this.toggleMenu.bind(this)}></Button>
               <Toolbar flush right>
