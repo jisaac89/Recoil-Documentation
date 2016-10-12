@@ -4,7 +4,7 @@ var buildPath = path.resolve(__dirname, 'dist');
 var mainPath = path.resolve(__dirname, 'src', 'index.tsx');
 
 var config = {
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   devServer: {
     historyApiFallback: true,
     contentBase: './',
@@ -12,7 +12,6 @@ var config = {
   },
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
-    'webpack/hot/only-dev-server',
     'babel-polyfill',
     './src/index.tsx'
   ],
@@ -26,14 +25,11 @@ var config = {
     alias: [],
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.jsx']
   },
-  plugins: [
-     new webpack.HotModuleReplacementPlugin()
-  ],
   module: {
     noParse: [],
     loaders: [{
         test: /\.tsx?$/,
-        loader: 'react-hot!babel-loader?presets[]=es2015!ts-loader',
+        loader: 'babel-loader?presets[]=es2015!ts-loader',
         include: [/src/, /recoil/]
     }, {
         test: /\.css$/,
