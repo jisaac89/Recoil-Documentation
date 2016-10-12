@@ -31,6 +31,7 @@ export default class App extends React.Component<any, any> {
     this.state = {
       slideIndex: 0,
       showMenu: false,
+      nightmode: false,
       slideIndexs: []
     }
   }
@@ -56,6 +57,12 @@ export default class App extends React.Component<any, any> {
     })
   }
 
+  toggleNightMode() {
+    this.setState({
+      nightmode : !this.state.nightmode
+    })
+  }
+
   menuTemplate(element) {
     return (
       <Button>a</Button>
@@ -65,7 +72,7 @@ export default class App extends React.Component<any, any> {
   detailTemplate(element) {
     return (
       <div className="p10">
-        a
+        <small>{element.component.description}</small>
       </div>
     )
   }
@@ -89,7 +96,7 @@ export default class App extends React.Component<any, any> {
     ]
  
     return (
-      <Layer fill overflow>
+      <Layer fill overflow className={self.state.nightmode ? "e-NightMode" : ""}>
         <SlideIn className="w300px z3 h100" from="left" if={state.showMenu}>
           <Layer scrollY className="h100">
             <Table
@@ -100,6 +107,8 @@ export default class App extends React.Component<any, any> {
               rowIsSelectable="single"
               pageSize={SampleData.length}
               onRowSelect={this.gotoSlideIndex.bind(this)}
+              detailTemplate={this.detailTemplate.bind(this)}
+              detailTemplateOpenOnRowSelect="single"
             />
           </Layer>
         </SlideIn>
@@ -109,10 +118,10 @@ export default class App extends React.Component<any, any> {
               <Button simple iconPointer="left" icon={state.showMenu ? "times" : "bars"} onClick={this.toggleMenu.bind(this)}></Button>
               <Toolbar flush right>
                 <Button theme="primary" icon="github">Grab Latest Version</Button>
-                <Button icon="moon-o" />
+                <Button onClick={self.toggleNightMode.bind(self)} icon="moon-o" />
               </Toolbar>
             </Toolbar>
-            <Wizard slideIndex={state.slideIndex}>
+              <Wizard overflow slideIndex={state.slideIndex}>
                 <TutorialAlign />
                 <TutorialButton></TutorialButton>
                 <TutorialCheckbox></TutorialCheckbox>
@@ -136,9 +145,9 @@ export default class App extends React.Component<any, any> {
         </Layer>
         <SlideIn if={!state.showMenu} from="bottom">
           <Layer className="p10 light border-top" block>
-            <Align>
-              <Button onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex - 1 )}>Back</Button>
-              <Button onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex + 1 )}>Forward</Button>
+            <Align margin={"10px"}>
+              <Button icon="chevron-left" onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex - 1 )}>Back</Button>
+              <Button icon="chevron-right" onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex + 1 )}>Forward</Button>
             </Align>
           </Layer>
         </SlideIn>
