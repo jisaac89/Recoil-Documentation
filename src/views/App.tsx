@@ -79,7 +79,7 @@ export default class App extends React.Component<any, any> {
     let template = (component, key) => {
       return (
         <div key={key}>
-          {component.name}
+          {component.component.name}
         </div>
       )
     }

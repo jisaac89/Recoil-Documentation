@@ -75,7 +75,7 @@ export default class TutorialAlign extends React.Component<any,any>{
             <h3>Default</h3>
             <p>By default, the Align component aligns elements horizontally</p>
             <div className="ptb20">
-              <div className="dark">
+              <div className="dark p10">
                 <Align margin={'10px'}>
                   <Layer theme="light" className="p20">Aligned Element 1</Layer>
                   <Layer theme="light" className="p20">Aligned Element 2</Layer>
@@ -87,7 +87,7 @@ export default class TutorialAlign extends React.Component<any,any>{
             <h3>Vertical</h3>
             <p>To align elements vertically, pass the <strong>vertical</strong> prop.</p>
             <div className="ptb20">
-              <div className="dark h300px">
+              <div className="dark h300px p10">
                 <Align vertical margin={'10px'}>
                   <Layer fill theme="light" className="p10">Aligned Element 1</Layer>
                   <Layer fill theme="light" className="p10">Aligned Element 2</Layer>
@@ -99,17 +99,17 @@ export default class TutorialAlign extends React.Component<any,any>{
             <h3>Multiple Aligns</h3>
             <p>Below shows an example using multiple Align components to achieve the desired effect.</p>
             <div className="ptb20">
-              <div className="dark h300px">
-                <Align margin={1}>
+              <div className="dark p5 h300px">
+                <Align margin={"5px"}>
                   <Layer fill>
-                    <Align margin={1} vertical>
+                    <Align margin={"5px"} vertical>
                       <Layer theme="light" className="p10" fill>1</Layer>
                       <Layer theme="light" className="p10" fill>2</Layer>
                       <Layer theme="light" className="p10" fill>3</Layer>
                     </Align>
                   </Layer>
                   <Layer fill>
-                    <Align margin={1} vertical maxCol={3} columns={[2,1]}>
+                    <Align margin={"5px"} vertical maxCol={3} columns={[2,1]}>
                       <Layer theme="light" className="p10" fill>4</Layer>
                       <Layer theme="light" className="p10" fill>5</Layer>
                     </Align>
