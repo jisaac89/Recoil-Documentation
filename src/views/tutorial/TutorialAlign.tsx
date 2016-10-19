@@ -85,7 +85,8 @@ export default class TutorialAlign extends React.Component<any,any>{
             <Toolbar flush className="mt20">
               <Button onClick={this.setColumns.bind(this, [1,1,1])}>[1,1,1]</Button>
               <Button onClick={this.setColumns.bind(this, [2,1,1])}>[2,1,1]</Button>
-              <Button onClick={this.setColumns.bind(this, [1,1,4])}>[3,2,1]</Button>
+              <Button onClick={this.setColumns.bind(this, [1,1,4])}>[1,1,4]</Button>
+              <Button onClick={this.setColumns.bind(this, [1,3,4])}>[3,2,1]</Button>
             </Toolbar>
             <div className="ptb20">
               <div className="dark p10">
@@ -113,7 +114,7 @@ export default class TutorialAlign extends React.Component<any,any>{
             <p>Below shows an example using multiple Align components to achieve the desired effect.</p>
             <div className="ptb20">
               <div className="dark p5 h300px">
-                <Align margin={"5px"}>
+                <Align columns={this.state.columns} margin={"5px"}>
                   <Layer fill>
                     <Align margin={"5px"} vertical>
                       <Layer theme="light" className="p10" fill>1</Layer>
