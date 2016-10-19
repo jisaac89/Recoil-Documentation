@@ -79,7 +79,7 @@ export default class TutorialAlign extends React.Component<any,any>{
                 <Align margin={'10px'}>
                   <Layer theme="light" className="p20">Aligned Element 1</Layer>
                   <Layer theme="light" className="p20">Aligned Element 2</Layer>
-                  <Layer theme="light" className="p20">Aligned Element 2</Layer>
+                  <Layer theme="light" className="p20">Aligned Element 3</Layer>
                 </Align>
               </div>
             </div>

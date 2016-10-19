@@ -72,7 +72,7 @@ export default class App extends React.Component<any, any> {
   detailTemplate(element) {
     return (
       <div className="p10">
-        <small>{element.component.description}</small>
+        <small>{element.description}</small>
       </div>
     )
   }
@@ -86,7 +86,7 @@ export default class App extends React.Component<any, any> {
     let template = (component, key) => {
       return (
         <div key={key}>
-          {component.component.name}
+          {component.name}
         </div>
       )
     }
@@ -98,7 +98,7 @@ export default class App extends React.Component<any, any> {
     return (
       <Layer fill overflow className={self.state.nightmode ? "e-NightMode" : ""}>
         <SlideIn className="w300px z3 h100" from="left" if={state.showMenu}>
-          <Layer scrollY className="h100">
+          <Layer scrollY className="h100 p10">
             <Table
               selectedElements={[SampleData[0]]}
               hideHeader
@@ -109,6 +109,9 @@ export default class App extends React.Component<any, any> {
               onRowSelect={this.gotoSlideIndex.bind(this)}
               detailTemplate={this.detailTemplate.bind(this)}
               detailTemplateOpenOnRowSelect="single"
+              searchableKeys={['name']}
+              searchTitle={"Search for a Component, e.g. Button"}
+              detailTemplateHideToggle
             />
           </Layer>
         </SlideIn>
@@ -126,16 +129,16 @@ export default class App extends React.Component<any, any> {
                 <TutorialButton></TutorialButton>
                 <TutorialCheckbox></TutorialCheckbox>
                 <TutorialDropdown></TutorialDropdown>
-                <TutorialEmerge></TutorialEmerge>
+                <TutorialOpen></TutorialOpen>
+                <TutorialEmerge if={state.slideIndex === 5}></TutorialEmerge>
+                <TutorialTable></TutorialTable>
                 <TutorialInput></TutorialInput>
                 <TutorialLayer></TutorialLayer>
                 <TutorialLoading></TutorialLoading>
                 <TutorialModal></TutorialModal>
-                <TutorialOpen></TutorialOpen>
+                <TutorialSlideIn></TutorialSlideIn>
                 <TutorialSelectable></TutorialSelectable>
                 <TutorialShrink></TutorialShrink>
-                <TutorialSlideIn></TutorialSlideIn>
-                <TutorialTable></TutorialTable>
                 <TutorialToggle></TutorialToggle>
                 <TutorialToolbar></TutorialToolbar>
                 <TutorialTransform></TutorialTransform>

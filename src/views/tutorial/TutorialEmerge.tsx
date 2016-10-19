@@ -98,7 +98,7 @@ export default class TutorialEmerge extends React.Component<any,any>{
           <h2 className="pb10">Examples</h2>
           <Layer className="ptb10">
             <Layer className="p10 light">
-              <Emerge delay={300} if={this.props.slideIndex === 6}>
+              <Emerge delay={300} if={props.if}>
                 <Button className="mr10">
                   A
                 </Button>
