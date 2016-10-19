@@ -29,7 +29,8 @@ export default class TutorialAlign extends React.Component<any,any>{
 
     this.state = {
       showProps : true,
-      showVideo: false
+      showVideo: false,
+      columns: [1,1,1]
     }
   }
 
@@ -37,6 +38,12 @@ export default class TutorialAlign extends React.Component<any,any>{
     this.setState({
       showVideo: false,
       showProps: this.state.showProps ? false : true
+    })
+  }
+
+  setColumns(columns){
+    this.setState({
+      columns : columns
     })
   }
 
@@ -74,12 +81,18 @@ export default class TutorialAlign extends React.Component<any,any>{
 
             <h3>Default</h3>
             <p>By default, the Align component aligns elements horizontally</p>
+            <p>Set Columns:</p>
+            <Toolbar flush className="mt20">
+              <Button onClick={this.setColumns.bind(this, [1,1,1])}>[1,1,1]</Button>
+              <Button onClick={this.setColumns.bind(this, [2,1,1])}>[2,1,1]</Button>
+              <Button onClick={this.setColumns.bind(this, [1,1,4])}>[3,2,1]</Button>
+            </Toolbar>
             <div className="ptb20">
               <div className="dark p10">
-                <Align margin={'10px'}>
-                  <Layer theme="light" className="p20">Aligned Element 1</Layer>
-                  <Layer theme="light" className="p20">Aligned Element 2</Layer>
-                  <Layer theme="light" className="p20">Aligned Element 3</Layer>
+                <Align columns={this.state.columns} margin={'10px'}>
+                  <Layer theme="light" className="p20">Element 1</Layer>
+                  <Layer theme="light" className="p20">Element 2</Layer>
+                  <Layer theme="light" className="p20">Element 3</Layer>
                 </Align>
               </div>
             </div>
@@ -88,10 +101,10 @@ export default class TutorialAlign extends React.Component<any,any>{
             <p>To align elements vertically, pass the <strong>vertical</strong> prop.</p>
             <div className="ptb20">
               <div className="dark h300px p10">
-                <Align vertical margin={'10px'}>
-                  <Layer fill theme="light" className="p10">Aligned Element 1</Layer>
-                  <Layer fill theme="light" className="p10">Aligned Element 2</Layer>
-                  <Layer fill theme="light" className="p10">Aligned Element 3</Layer>
+                <Align vertical margin={'10px'} columns={this.state.columns}> 
+                  <Layer fill theme="light" className="p10">Element 1</Layer>
+                  <Layer fill theme="light" className="p10">Element 2</Layer>
+                  <Layer fill theme="light" className="p10">Element 3</Layer>
                 </Align>
               </div>
             </div>
@@ -109,7 +122,7 @@ export default class TutorialAlign extends React.Component<any,any>{
                     </Align>
                   </Layer>
                   <Layer fill>
-                    <Align margin={"5px"} vertical maxCol={3} columns={[2,1]}>
+                    <Align margin={"5px"} vertical maxCol={3}>
                       <Layer theme="light" className="p10" fill>4</Layer>
                       <Layer theme="light" className="p10" fill>5</Layer>
                     </Align>

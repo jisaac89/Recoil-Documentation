@@ -149,8 +149,8 @@ export default class App extends React.Component<any, any> {
         <SlideIn if={!state.showMenu} from="bottom">
           <Layer className="p10 light border-top" block>
             <Align margin={"10px"}>
-              <Button icon="chevron-left" onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex - 1 )}>Back</Button>
-              <Button icon="chevron-right" onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex + 1 )}>Forward</Button>
+              {SampleData[state.slideIndex - 1] ? <Button icon="chevron-left" onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex - 1 )}>{SampleData[state.slideIndex - 1] ? SampleData[state.slideIndex - 1].name : null}</Button> : null}
+              {SampleData[state.slideIndex + 1] ? <Button icon="chevron-right" onClick={this.gotoSlideIndexNumber.bind(this, state.slideIndex + 1 )}>{SampleData[state.slideIndex + 1] ? SampleData[state.slideIndex + 1].name : null}</Button> : null}
             </Align>
           </Layer>
         </SlideIn>
