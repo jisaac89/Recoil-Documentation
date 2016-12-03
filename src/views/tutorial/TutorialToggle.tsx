@@ -105,8 +105,6 @@ export default class TutorialCard extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>Toggle</h1>
-
           <Layer className="ptb20">
             <h2 className="pb10">Description</h2>
             <p>The material component is a google material enspired div, it has advanced feautures.</p>

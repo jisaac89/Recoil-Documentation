@@ -69,8 +69,6 @@ export default class TutorialShrink extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>Shrink</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The Shrink component is shrinks and disbales its children depending on an if statement.</p>

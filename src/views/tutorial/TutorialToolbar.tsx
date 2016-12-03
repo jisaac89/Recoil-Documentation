@@ -61,8 +61,6 @@ export default class TutorialToolbar extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>Toolbar</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The toolbar component allows you to pass and style a group of buttons, inputs and dropdowns.</p>
@@ -71,16 +69,31 @@ export default class TutorialToolbar extends React.Component<any,any>{
           <Layer className="ptb10">
             <h2 className="pb10">Examples</h2>
             <Layer className="ptb10">
-              <Layer className="p10 light text-center">
-                <Toolbar vertical spacing>
-                  <Button>A</Button>
-                  <Button>B</Button>
-                  <Button>C</Button>
+              <Layer className="p10 light">
+                <Toolbar disabled flush block>
+                  <Button icon="user" />
+                  <Input placeholder="Find Users" />
+                  <Button icon="times" />
                 </Toolbar>
-                <Toolbar spacing>
-                  <Button>A</Button>
-                  <Button>B</Button>
-                  <Button>C</Button>
+                <Toolbar spacing block className="mt10">
+                  <Button icon="user" />
+                  <Input placeholder="Find Users" />
+                  <Button icon="times" />
+                </Toolbar>
+                <Toolbar flush block className="mt10">
+                  <Button simple icon="user" />
+                  <Input simple placeholder="Find Users" />
+                  <Button simple icon="times" />
+                </Toolbar>
+                <Toolbar vertical block spacing className="mt10 w300px">
+                  <Button block>Menu Item 1</Button>
+                  <Button block>Menu Item 2</Button>
+                  <Button block>Menu Item 3</Button>
+                </Toolbar>
+                <Toolbar block size="small" vertical flush className="mt10 w200px">
+                  <Button block>Menu Item 1</Button>
+                  <Button block>Menu Item 2</Button>
+                  <Button block>Menu Item 3</Button>
                 </Toolbar>
               </Layer>
             </Layer>

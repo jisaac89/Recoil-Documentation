@@ -40,7 +40,15 @@ var config = {
         loader: "style-loader!css-loader!clean-css-loader!postcss-loader!less-loader",
         include: [/src/, /recoil/]
     }]
-  }
+  },
+  plugins: [
+        // new webpack.optimize.UglifyJsPlugin(),
+        // new webpack.DefinePlugin({
+        //     'process.env': {
+        //         'NODE_ENV': JSON.stringify('production')
+        //     }
+        // })
+  ]
 }
 
 module.exports = config;

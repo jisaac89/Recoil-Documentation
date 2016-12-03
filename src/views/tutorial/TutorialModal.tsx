@@ -83,9 +83,19 @@ export default class TutorialModal extends React.Component<any,any>{
     })
   }
 
-  toggleModal() {
+  openModal() {
     this.setState({
-      showModal: this.state.showModal ? false : true
+      showModal: true
+    }, ()=>{
+      this.props.toggleModal(this.state.showModal);
+    })
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false
+    }, ()=>{
+      this.props.toggleModal(this.state.showModal);
     })
   }
 
@@ -105,8 +115,6 @@ export default class TutorialModal extends React.Component<any,any>{
       <Emerge enter="fadeIn">
           <div className="p10">
 
-          <h1>Modal</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The Modal component shows a simple modal if a certain event happens.</p>
@@ -115,9 +123,7 @@ export default class TutorialModal extends React.Component<any,any>{
           <Layer className="ptb10">
             <h2 className="pb10">Examples</h2>
             <Layer className="ptb10">
-              <Layer className="p10 light">
-                <Button onClick={this.toggleModal.bind(this)}>Show Modal</Button>
-              </Layer>
+              <Button theme="primary" onClick={this.openModal.bind(this)}>Show Modal</Button>
             </Layer>
           </Layer>
 
@@ -141,12 +147,12 @@ export default class TutorialModal extends React.Component<any,any>{
             </Open>
           </Layer>
 
-          <Modal open={this.state.showModal}>
+          <Modal open={this.state.showModal} onClose={this.closeModal.bind(this)}>
             <Layer className="p10">
               <p className="mb10">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
-              <Button onClick={this.toggleModal.bind(this)}>Close Modal</Button>
+              <Button onClick={this.closeModal.bind(this)}>Close Modal</Button>
             </Layer>
           </Modal>
 

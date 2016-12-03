@@ -133,7 +133,6 @@ export default class TutorialInput extends React.Component<any,any>{
     <Emerge enter="fadeIn">
     <div className="p10">
 
-      <h1>Input</h1>
 
       <Layer className="ptb10">
         <h2 className="pb10">Description</h2>
@@ -143,19 +142,18 @@ export default class TutorialInput extends React.Component<any,any>{
       <Layer className="ptb10">
         <h2 className="pb10">Examples</h2>
         <Layer className="ptb10">
-          <Layer className="p10 light">
-            <Input advanced type="text" icon="search" title="Search Users" onChange={this.setonChange.bind(this)} block />
-          </Layer>
+          <Toolbar vertical spacing>
+            <Input size="small" advanced type="text" title="First Name" onChange={this.setonChange.bind(this)} block />
+            <Input advanced type="text" title="Last Name" onChange={this.setonChange.bind(this)} block />
+            <Input simple size="large" advanced type="text" icon="search" title="Search Users" onChange={this.setonChange.bind(this)} block />
+            <Input size="xlarge" advanced type="text" title="Email" onChange={this.setonChange.bind(this)} block />
+          </Toolbar>
         </Layer>
         <Layer className="ptb10">
-          <Layer className="p10 light">
-            <Input advanced type="text" placeholder="Search Places" onChange={this.setonChange.bind(this)} block />
-          </Layer>
+          <Input advanced type="text" placeholder="Search Places" onChange={this.setonChange.bind(this)} block />
         </Layer>
         <Layer className="ptb10">
-          <Layer className="p10 light">
-            <Input error={true} errorMessage={"Error Message"} advanced type="text" placeholder="Search Places" onChange={this.setonChange.bind(this)} block />
-          </Layer>
+          <Input error={true} simple errorMessage={"Error Message"} advanced type="text" placeholder="Search Places" onChange={this.setonChange.bind(this)} block />
         </Layer>
       </Layer>
 

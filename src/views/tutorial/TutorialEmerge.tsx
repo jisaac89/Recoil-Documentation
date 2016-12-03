@@ -87,8 +87,6 @@ export default class TutorialEmerge extends React.Component<any,any>{
       <Emerge enter="fadeIn">
       <div className="p10">
 
-        <h1>Emerge</h1>
-
         <Layer className="ptb20">
           <h2 className="pb10">Description</h2>
           <p>The Emerge component staggers children into view if a certain event happens.</p>

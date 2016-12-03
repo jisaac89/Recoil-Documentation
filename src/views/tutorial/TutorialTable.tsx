@@ -89,6 +89,14 @@ export default class TutorialTable extends React.Component<any,any>{
     })
   }
 
+  detailTemplate(element) {
+    return (
+      <div className="p10">
+        <small>{element.description}</small>
+      </div>
+    )
+  }
+
   render() {
 
     const self = this;
@@ -105,8 +113,6 @@ export default class TutorialTable extends React.Component<any,any>{
       <Emerge enter="fadeIn">
       <div className="p10">
 
-        <h1>Table</h1>
-
         <div className="ptb10">
           <h2 className="pb10">Description</h2>
           <p>The Table component is a simple data-Table that currently takes in a object.</p>
@@ -115,7 +121,7 @@ export default class TutorialTable extends React.Component<any,any>{
         <div className="ptb10">
           <h2 className="pb10">Examples</h2>
           <div className="ptb10">
-            <Table  pageSize={20} searchableKeys={['name']} sortable columns={columns} dataSource={TableProperties} />
+            <Table showDataSourceLength pageSize={5} checkable detailTemplate={this.detailTemplate.bind(this)} searchableKeys={['name']} sortable columns={columns} dataSource={TableProperties} />
           </div>
         </div>
 

@@ -164,8 +164,6 @@ export default class TutorialButton extends React.Component<any,any>{
     return (
       <Emerge enter="fadeIn">
         <div className="p10">
-
-          <h1>Button</h1>
           <div className="ptb20">
             <h2 className="pb10">Description</h2>
             <p>The Button component is an advanced version of the standard default button control.</p>

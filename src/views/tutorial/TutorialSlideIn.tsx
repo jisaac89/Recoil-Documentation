@@ -88,8 +88,6 @@ export default class TutorialSlideIn extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>SlideIn</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The SlideIn slides in an element if a certain event happens, user must state the direction as well.</p>

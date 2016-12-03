@@ -57,8 +57,6 @@ export default class TutorialLoading extends React.Component<any,any>{
       <Emerge enter="fadeIn">
       <div className="p10">
 
-          <h1>Loading</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The Loading component shows a simple loader if a certain event happens.</p>

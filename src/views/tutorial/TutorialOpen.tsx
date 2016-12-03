@@ -82,8 +82,6 @@ export default class TutorialOpen extends React.Component<any,any>{
       <Emerge enter="fadeIn">
       <div className="p10">
 
-        <h1>Open</h1>
-
         <Layer className="ptb20">
           <h2 className="pb10">Description</h2>
           <p>The Open component opens or closes its children depending on an if statement. By default Open are always closed.</p>

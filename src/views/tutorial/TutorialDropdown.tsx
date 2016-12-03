@@ -76,9 +76,6 @@ export default class TutorialDropdown extends React.Component<any,any>{
     return (
       <Emerge enter="fadeIn">
        <div className="p10">
-
-        <h1>Dropdown</h1>
-
         <Layer className="ptb10">
           <h2 className="pb10">Description</h2>
           <p>The Dropdown component is an advanced version of the standard selection options control.</p>

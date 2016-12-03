@@ -77,8 +77,6 @@ export default class TutorialSelectable extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>Selectable</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The Selectable component is a simple way to attach a checked state to any element.</p>

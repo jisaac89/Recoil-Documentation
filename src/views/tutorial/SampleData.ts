@@ -79,7 +79,7 @@ const SampleData = [
   {
     "index": 11,
     "guid": "d1f4326e-85dd-446d-93d1-1620efc6a90f",
-      "name": "Pane",
+      "name": "SlideIn",
       "description": "A dialog box that appears relative to the parent from a certain direction.",
       "slideIndex": "11"
   },

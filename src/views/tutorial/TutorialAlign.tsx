@@ -68,9 +68,6 @@ export default class TutorialAlign extends React.Component<any,any>{
     return (
       <Emerge enter="fadeIn">
         <div className="p10">
-
-          <h1>Align</h1>
-
           <Layer className="ptb20">
             <h2 className="pb10">Description</h2>
             <p>The Align component is a flex alternative, it aligns components either horizontally or vertically with a option margin set.</p>
@@ -91,9 +88,9 @@ export default class TutorialAlign extends React.Component<any,any>{
             <div className="ptb20">
               <div className="dark p10">
                 <Align columns={this.state.columns} margin={'10px'}>
-                  <Layer theme="light" className="p20">Element 1</Layer>
-                  <Layer theme="light" className="p20">Element 2</Layer>
-                  <Layer theme="light" className="p20">Element 3</Layer>
+                  <Layer theme="light" className="p20">1</Layer>
+                  <Layer theme="light" className="p20">2</Layer>
+                  <Layer theme="light" className="p20">3</Layer>
                 </Align>
               </div>
             </div>
@@ -103,9 +100,9 @@ export default class TutorialAlign extends React.Component<any,any>{
             <div className="ptb20">
               <div className="dark h300px p10">
                 <Align vertical margin={'10px'} columns={this.state.columns}> 
-                  <Layer fill theme="light" className="p10">Element 1</Layer>
-                  <Layer fill theme="light" className="p10">Element 2</Layer>
-                  <Layer fill theme="light" className="p10">Element 3</Layer>
+                  <Layer fill theme="light" className="p10">1</Layer>
+                  <Layer fill theme="light" className="p10">2</Layer>
+                  <Layer fill theme="light" className="p10">3</Layer>
                 </Align>
               </div>
             </div>
@@ -123,7 +120,7 @@ export default class TutorialAlign extends React.Component<any,any>{
                     </Align>
                   </Layer>
                   <Layer fill>
-                    <Align margin={"5px"} vertical maxCol={3}>
+                    <Align margin={"5px"} vertical>
                       <Layer theme="light" className="p10" fill>4</Layer>
                       <Layer theme="light" className="p10" fill>5</Layer>
                     </Align>

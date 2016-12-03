@@ -52,8 +52,6 @@ export default class TutorialTransform extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>Transform</h1>
-
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
             <p>The Transform component is an allows you to transform an element, add a type (translate, scale etc) and an amount (interger or string) to an element if a certain event happens.</p>

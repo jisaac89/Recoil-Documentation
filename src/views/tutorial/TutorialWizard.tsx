@@ -61,7 +61,6 @@ export default class TutorialWizard extends React.Component<any,any>{
       <Emerge enter="fadeIn">
         <div className="p10">
 
-          <h1>Wizard</h1>
 
           <Layer className="ptb10">
             <h2 className="pb10">Description</h2>
