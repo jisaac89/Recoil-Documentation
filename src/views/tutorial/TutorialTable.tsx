@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
 
-
+import TutorialView from './TutorialView';
 const TableProperties = [
   {
     name :'columns',
@@ -108,42 +108,23 @@ export default class TutorialTable extends React.Component<any,any>{
       {name: 'type', width:140},
       {name: 'description'}
     ]
+    let example = () => {
+      return (
+        <div>
+          <Table showDataSourceLength pageSize={5} checkable detailTemplate={this.detailTemplate.bind(this)} searchableKeys={['name']} sortable columns={columns} dataSource={TableProperties} />
+        </div>
+      )
+    }
 
     return (
-      <Emerge enter="fadeIn">
-      <div className="p10">
-
-        <div className="ptb10">
-          <h2 className="pb10">Description</h2>
-          <p>The Table component is a simple data-Table that currently takes in a object.</p>
-        </div>
-
-        <div className="ptb10">
-          <h2 className="pb10">Examples</h2>
-          <div className="ptb10">
-            <Table showDataSourceLength pageSize={5} checkable detailTemplate={this.detailTemplate.bind(this)} searchableKeys={['name']} sortable columns={columns} dataSource={TableProperties} />
-          </div>
-        </div>
-
-        <div className="ptb10">
-          <h2 className="pb10">Props</h2>
-          <div className="ptb10">
-            <Table  pageSize={20} sortable columns={columns} dataSource={TableProperties} />
-          </div>
-        </div>
-
-        <div className="ptb10">
-          <h2 className="pb10">Video</h2>
-          <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
-          <Open if={this.state.showVideo}>
-            <div className="ptb10">
-              VIDEO
-            </div>
-          </Open>
-        </div>
-
-      </div>
-      </Emerge>
+      <TutorialView 
+        description="The Table component is a simple data-Table that currently takes in a object."
+        Id="Table"
+        columnData={TableProperties}
+        examples={example}
+        scrollIf={props.scrollIf}
+        scrollToId={props.scrollToId}
+      />
     )
   }
 }

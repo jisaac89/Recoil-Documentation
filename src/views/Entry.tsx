@@ -55,6 +55,12 @@ export default class App extends React.Component<any, any> {
       })
   }
 
+  toggleMobile(isMobile){
+    this.setState({
+      mobile: isMobile
+    })
+  }
+
   gotoSlideIndex(item) {
     this.setState({
       slideIndex : item.index,
@@ -65,29 +71,30 @@ export default class App extends React.Component<any, any> {
 
   render() {
 
-    let {showModal, showMenu, nightmode, slideIndex} = this.state;
+    let {showModal, showMenu, nightmode, slideIndex, mobile} = this.state;
     return (
-      <Recoil nightmode={nightmode}>
-        <Shrink fill if={showModal || showMenu}>
-          <Transform type="translate" axis={'X'} flex fill if={this.state.showMenu} amount="300px" >
-            <Open if={true} openToHeight={'48px'}>
+      <Recoil nightmode={nightmode} onMobile={this.toggleMobile.bind(this)}>
+        <Shrink fill if={showModal}>
+          <Transform type={mobile ? "translate" : null} push={!mobile ? 'left' : null} axis={'X'} flex fill if={this.state.showMenu} amount="300px" >
+            <SlideIn className='z5' if={!showModal} from={'top'}>
               <Layer fill theme="light">
                 <Toolbar size="small" block className="p10 border-bottom">
                   <Button simple icon="bars" onClick={this.toggleMenu.bind(this)} />
                   <h1 className="dinblock">Recoil</h1>
-                  <Button theme="error" right icon="github">github</Button>
+                  <Button href="https://www.github.com/jisaac89/recoil" theme="error" right icon="github">github</Button>
                   <Button onClick={this.toggleNightMode.bind(this)} right icon="moon-o" className="mr5"></Button>
                 </Toolbar>
+                <hr />  
               </Layer>
-            </Open>
-            <Layer fill scrollY>
-              <Wizard slideIndex={slideIndex}>
-                <TutorialAlign />
-                <TutorialButton></TutorialButton>
-                <TutorialCheckbox></TutorialCheckbox>
-                <TutorialDropdown></TutorialDropdown>
-                <TutorialOpen></TutorialOpen>
-                <TutorialEmerge if={slideIndex === 5}></TutorialEmerge>
+            </SlideIn>
+            <Layer fill overflow className="ps5 ptb50 z4">
+              <Wizard fill flex slideIndex={slideIndex}>
+                <TutorialAlign scrollIf={slideIndex === 0} scrollToId={SampleData[slideIndex].name} />
+                <TutorialButton scrollIf={slideIndex === 1} scrollToId={SampleData[slideIndex].name}></TutorialButton>
+                <TutorialCheckbox scrollIf={slideIndex === 2} scrollToId={SampleData[slideIndex].name}></TutorialCheckbox>
+                <TutorialDropdown scrollIf={slideIndex === 3} scrollToId={SampleData[slideIndex].name}></TutorialDropdown>
+                <TutorialOpen scrollIf={slideIndex === 4} scrollToId={SampleData[slideIndex].name}></TutorialOpen>
+                <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 5}></TutorialEmerge>
                 <TutorialTable></TutorialTable>
                 <TutorialInput></TutorialInput>
                 <TutorialLayer></TutorialLayer>
@@ -102,9 +109,17 @@ export default class App extends React.Component<any, any> {
                 <TutorialWizard></TutorialWizard>
               </Wizard>    
             </Layer>
+            <SlideIn className='z5' if={!showModal && showMenu === false && showModal === false} from={'bottom'}>
+              <Layer fill nightmode>
+                <Toolbar textCenter flex spacing block className="p10 border-top">
+                  {SampleData[slideIndex - 1] ? <Button block onClick={this.gotoSlideIndex.bind(this, SampleData[slideIndex - 1])}>{SampleData[slideIndex - 1].name}</Button> : null}
+                  {SampleData[slideIndex + 1] ? <Button block right onClick={this.gotoSlideIndex.bind(this, SampleData[slideIndex + 1])}>{SampleData[slideIndex + 1].name}</Button> : null}
+                </Toolbar>
+              </Layer>
+            </SlideIn>
           </Transform>
         </Shrink>
-        <SlideIn if={this.state.showMenu} from="left" className="w300px h100">
+        <SlideIn if={this.state.showMenu} from="left" className={mobile ? "w300px h100" : "w300px h100 pt50"}>
           <Layer fill nightmode scrollY className="p10">
             <Table
               dataSource={SampleData}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
 
-
+import TutorialView from './TutorialView';
 const TransformProperties = [
   {name : 'fill', type: '', options: '', description: ''},
   {name : 'type', type: '', options: '', description: ''},
@@ -47,47 +47,27 @@ export default class TutorialTransform extends React.Component<any,any>{
       {name: 'type', width:140},
       {name: 'description'}
     ]
-
-    return (
-      <Emerge enter="fadeIn">
-        <div className="p10">
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Description</h2>
-            <p>The Transform component is an allows you to transform an element, add a type (translate, scale etc) and an amount (interger or string) to an element if a certain event happens.</p>
-          </Layer>
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Examples</h2>
-            <Layer className="ptb10">
-              <Layer className="p10 light">
-                <Checkbox />
+    let example = () => {
+      return (
+        <div>
+            <Layer className="p10 dark">
+              <Layer theme="light" className="p10">
+                This is a Layer
               </Layer>
             </Layer>
-          </Layer>
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Options</h2>
-            <Button checked={this.state.showProps} onClick={this.toggleShowProps.bind(this)}>Toggle Options</Button>
-            <Open if={this.state.showProps}>
-              <Layer className="ptb10">
-                <Table sortable columns={columns} dataSource={TransformProperties} />
-              </Layer>
-            </Open>
-          </Layer>
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Video</h2>
-            <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
-            <Open if={this.state.showVideo}>
-              <Layer className="ptb10">
-                VIDEO
-              </Layer>
-            </Open>
-          </Layer>
-
         </div>
-      </Emerge>
+      )
+    }
+
+    return (
+      <TutorialView 
+        description="The Transform component is an allows you to transform an element, add a type (translate, scale etc) and an amount (interger or string) to an element if a certain event happens."
+        Id="Transform"
+        columnData={TransformProperties}
+        examples={example}
+        scrollIf={props.scrollIf}
+        scrollToId={props.scrollToId}
+      />
     )
   }
 }

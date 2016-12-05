@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
 
-
+import TutorialView from './TutorialView';
 const CardProperties = [
   {
     name :'resize',
@@ -100,19 +100,10 @@ export default class TutorialCard extends React.Component<any,any>{
       {name: 'type', width:140},
       {name: 'description'}
     ]
-
-    return (
-      <Emerge enter="fadeIn">
-        <div className="p10">
-
-          <Layer className="ptb20">
-            <h2 className="pb10">Description</h2>
-            <p>The material component is a google material enspired div, it has advanced feautures.</p>
-          </Layer>
-
-          <Layer className="pb20">
-            <h2 className="pb10">Examples</h2>
-            <h3>Default</h3>
+    let example = () => {
+      return (
+        <div>
+<h3>Default</h3>
             <Layer className="ptb20">
               <Toggle />
             </Layer>
@@ -154,27 +145,19 @@ export default class TutorialCard extends React.Component<any,any>{
                 <Toggle type="colors" array={['#FF5757', '#00A0DC', '#8D6CAB']} />
               </Toolbar>
             </Layer>
-          </Layer>
-
-          <Layer className="pb20">
-            <h2 className="pb10">Props</h2>
-              <Layer className="ptb10">
-                <Table sortable columns={columns} dataSource={CardProperties} />
-              </Layer>
-          </Layer>
-
-          <Layer className="pb20">
-            <h2 className="pb10">Video</h2>
-            <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
-            <Open if={this.state.showVideo}>
-              <Layer className="ptb10">
-                VIDEO
-              </Layer>
-            </Open>
-          </Layer>
-
         </div>
-      </Emerge>
+      )
+    }
+
+    return (
+      <TutorialView 
+        description="The material component is a google material enspired div, it has advanced feautures."
+        Id="Toggle"
+        columnData={CardProperties}
+        examples={example}
+        scrollIf={props.scrollIf}
+        scrollToId={props.scrollToId}
+      />
     )
   }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
-
+import TutorialView from './TutorialView';
 const WizardProperties = [
   {name : 'slideIndex', type: '', options: '', description: 'The active index to show.'},
   {name : 'fill', type: '', options: '', description: 'Add a width and height of 100% to the Wizard.'},
@@ -56,19 +56,9 @@ export default class TutorialWizard extends React.Component<any,any>{
       {name: 'type', width:140},
       {name: 'description'}
     ]
-
-    return (
-      <Emerge enter="fadeIn">
-        <div className="p10">
-
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Description</h2>
-            <p>The Wizard component allows you to create multi-step processes where users will move through screens in a specified order.</p>
-          </Layer>
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Examples</h2>
+    let example = () => {
+      return (
+        <div>
             <h3>Default</h3>
             <Layer className="h300px p20 mb10" theme="dark">
               <Wizard fill slideIndex={this.state.slideIndex}>
@@ -96,30 +86,19 @@ export default class TutorialWizard extends React.Component<any,any>{
                 <Button advanced checked={state.slideIndex2 === 1} onClick={this.gotoSlideIndex2.bind(this, 1)}>2</Button>
                 <Button advanced checked={state.slideIndex2 === 2} onClick={this.gotoSlideIndex2.bind(this, 2)}>3</Button>
             </Toolbar>
-          </Layer>
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Options</h2>
-            <Button checked={this.state.showProps} onClick={this.toggleShowProps.bind(this)}>Toggle Options</Button>
-            <Open if={this.state.showProps}>
-              <Layer className="ptb10">
-                <Table sortable columns={columns} dataSource={WizardProperties} />
-              </Layer>
-            </Open>
-          </Layer>
-
-          <Layer className="ptb10">
-            <h2 className="pb10">Video</h2>
-            <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
-            <Open if={this.state.showVideo}>
-              <Layer className="ptb10">
-                VIDEO
-              </Layer>
-            </Open>
-          </Layer>
-
         </div>
-      </Emerge>
+      )
+    }
+
+    return (
+      <TutorialView 
+        description="The Wizard component allows you to create multi-step processes where users will move through screens in a specified order."
+        Id="Wizard"
+        columnData={WizardProperties}
+        examples={example}
+        scrollIf={props.scrollIf}
+        scrollToId={props.scrollToId}
+      />
     )
   }
 }

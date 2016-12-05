@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
 
-
+import TutorialView from './TutorialView';
 const dropData = ['from', 'block', 'contentClass', 'onSelected', 'type', 'data'];
 
 const DropdownProperties = [
@@ -72,17 +72,9 @@ export default class TutorialDropdown extends React.Component<any,any>{
       {name: 'type', width:140},
       {name: 'description'}
     ]
-
-    return (
-      <Emerge enter="fadeIn">
-       <div className="p10">
-        <Layer className="ptb10">
-          <h2 className="pb10">Description</h2>
-          <p>The Dropdown component is an advanced version of the standard selection options control.</p>
-        </Layer>
-
-        <Layer className="ptb10">
-          <h2 className="pb10">Examples</h2>
+    let example = () => {
+      return (
+        <div>
           <h3>Default</h3>
           <div className="ptb20">
             <Layer className="p10 light">
@@ -128,27 +120,19 @@ export default class TutorialDropdown extends React.Component<any,any>{
               </Dropdown>
             </Layer>
           </div>
-        </Layer>
-
-        <div className="ptb10">
-          <h2 className="pb10">Props</h2>
-          <div className="ptb10">
-            <Table pageSize={20} sortable columns={columns} dataSource={DropdownProperties} />
-          </div>
         </div>
+      )
+    }
 
-        <Layer className="ptb10">
-          <h2 className="pb10">Video</h2>
-          <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
-          <Open if={this.state.showVideo}>
-            <Layer className="ptb10">
-              VIDEO
-            </Layer>
-          </Open>
-        </Layer>
-
-      </div>
-      </Emerge>
+    return (
+      <TutorialView 
+        description="The Dropdown component is an advanced version of the standard selection options control."
+        Id="Dropdown"
+        columnData={DropdownProperties}
+        examples={example}
+        scrollIf={props.scrollIf}
+        scrollToId={props.scrollToId}
+      />
     )
   }
 }
