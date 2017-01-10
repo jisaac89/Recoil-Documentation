@@ -91,9 +91,9 @@ export default class TutorialTable extends React.Component<any,any>{
 
   detailTemplate(element) {
     return (
-      <div className="p10">
+      <Layer theme="light" className="p10 pl50">
         <small>{element.description}</small>
-      </div>
+      </Layer>
     )
   }
 
@@ -104,9 +104,7 @@ export default class TutorialTable extends React.Component<any,any>{
     let state = self.state;
 
     const columns = [
-      {name: 'name', width:120},
-      {name: 'type', width:140},
-      {name: 'description'}
+      {name: 'name'}
     ]
     let example = () => {
       return (

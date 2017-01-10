@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "jsx": "react",
     "declaration": false,
@@ -19,6 +19,7 @@
     "node_modules",
     "webpack.config.js",
     "dist",
+    "recoil/tsconfig.json",
     "recoil/webpack.config.js"
   ],
   "compileOnSave": false

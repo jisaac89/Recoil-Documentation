@@ -3,8 +3,8 @@ import * as ReactDom from 'react';
 import {Router, Route, browserHistory, Redirect, IndexRoute} from 'react-router';
 import {observer} from 'mobx-react';
 
-import Entry from '../views/Entry.tsx';
-import Dashboard from '../views/dashboard/Dashboard.tsx';
+import Entry from '../views/Entry';
+import Dashboard from '../views/dashboard/Dashboard';
 import { createHashHistory } from 'history';
 
 @observer

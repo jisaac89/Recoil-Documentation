@@ -30,15 +30,15 @@ var config = {
     loaders: [{
         test: /\.tsx?$/,
         loader: 'babel-loader?presets[]=es2015!ts-loader',
-        include: [/src/, /recoil/]
+        include: [/src/, /recoil\/src/]
     }, {
         test: /\.css$/,
         loader: "style-loader!css-loader!clean-css-loader!postcss-loader",
-        include: [/src/, /recoil/]
+        include: [/src/, /recoil\/src/]
     }, {
         test: /\.less$/,
         loader: "style-loader!css-loader!clean-css-loader!postcss-loader!less-loader",
-        include: [/src/, /recoil/]
+        include: [/src/, /recoil\/src/]
     }]
   },
   plugins: [

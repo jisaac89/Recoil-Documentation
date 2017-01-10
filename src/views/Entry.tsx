@@ -90,19 +90,19 @@ export default class App extends React.Component<any, any> {
             <Layer fill overflow className="ps5 ptb50 z4">
               <Wizard fill flex slideIndex={slideIndex}>
                 <TutorialAlign scrollIf={slideIndex === 0} scrollToId={SampleData[slideIndex].name} />
-                <TutorialButton scrollIf={slideIndex === 1} scrollToId={SampleData[slideIndex].name}></TutorialButton>
+                <TutorialButton mobile={mobile} scrollIf={slideIndex === 1} scrollToId={SampleData[slideIndex].name}></TutorialButton>
                 <TutorialCheckbox scrollIf={slideIndex === 2} scrollToId={SampleData[slideIndex].name}></TutorialCheckbox>
-                <TutorialDropdown scrollIf={slideIndex === 3} scrollToId={SampleData[slideIndex].name}></TutorialDropdown>
-                <TutorialOpen scrollIf={slideIndex === 4} scrollToId={SampleData[slideIndex].name}></TutorialOpen>
-                <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 5}></TutorialEmerge>
-                <TutorialTable></TutorialTable>
+                <TutorialDropdown mobile={mobile} scrollIf={slideIndex === 3} scrollToId={SampleData[slideIndex].name}></TutorialDropdown>
+                <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 4}></TutorialEmerge>
                 <TutorialInput></TutorialInput>
                 <TutorialLayer></TutorialLayer>
                 <TutorialLoading></TutorialLoading>
                 <TutorialModal toggleModal={this.toggleModal.bind(this)}></TutorialModal>
-                <TutorialSlideIn></TutorialSlideIn>
+                <TutorialOpen scrollIf={slideIndex === 4} scrollToId={SampleData[slideIndex].name}></TutorialOpen>
                 <TutorialSelectable></TutorialSelectable>
                 <TutorialShrink></TutorialShrink>
+                <TutorialSlideIn></TutorialSlideIn>
+                <TutorialTable></TutorialTable>
                 <TutorialToggle></TutorialToggle>
                 <TutorialToolbar></TutorialToolbar>
                 <TutorialTransform></TutorialTransform>

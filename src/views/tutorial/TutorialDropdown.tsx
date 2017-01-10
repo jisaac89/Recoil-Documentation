@@ -37,6 +37,41 @@ const DropdownProperties = [
   }
 ]
 
+let days = [
+  {name: 'Monday'},
+  {name: 'Tuesday'},
+  {name: 'Wednesday'},
+  {name: 'Thursday'},
+  {name: 'Friday'},
+  {name: 'Saturday'},
+  {name: 'Sunday'}
+]
+
+let months = [
+  {name: 'January'},
+  {name: 'February'},
+  {name: 'March'},
+  {name: 'April'},
+  {name: 'May'},
+  {name: 'June'},
+  {name: 'July'},
+  {name: 'August'},
+  {name: 'October'},
+  {name: 'September'},
+  {name: 'November'},
+  {name: 'December'}
+]
+
+let users = [
+  {name: 'Joe'},
+  {name: 'John'},
+  {name: 'Mat'},
+  {name: 'Tom'},
+  {name: 'Sean'},
+  {name: 'Rob'},
+  {name: 'Anne'}
+]
+
 export default class TutorialDropdown extends React.Component<any,any>{
   constructor() {
     super();
@@ -78,14 +113,28 @@ export default class TutorialDropdown extends React.Component<any,any>{
           <h3>Default</h3>
           <div className="ptb20">
             <Layer className="p10 light">
-              <Dropdown rowIsSelectable="single" title="Single Option" dataSource={dropData} />
+              <Dropdown 
+                className='w200px' 
+                rowIsSelectable="single" 
+                title="Select Day"
+                hideHeader
+                dataSource={days}
+                hidePageSize
+              />
             </Layer>
           </div>
 
           <h3>Material</h3>
           <div className="ptb20">
             <Layer className="p10 light">
-              <Dropdown material rowIsSelectable="single" title="Material Dropdown" dataSource={dropData} />
+              <Dropdown 
+                className='w200px' 
+                rowIsSelectable="single" 
+                title="Select Month"
+                hideHeader 
+                dataSource={months}
+                hidePageSize 
+              />
             </Layer>
           </div>
 
@@ -93,7 +142,7 @@ export default class TutorialDropdown extends React.Component<any,any>{
           <p>To add an icon to a dropdowns, just add an icon prop to it. Icon's are taken from font-awesome, you can omit the fa fa-, for example below it would be a Button compoent with a icon prop of "star"</p>
           <div className="ptb20">
             <Layer className="p10 light">
-              <Dropdown icon="star" rowIsSelectable title="Multiple Options" dataSource={dropData} />
+              <Dropdown mobile={props.mobile} className='w200px' icon="star" rowIsSelectable title="Select Users" dataSource={users} columns={[{name:'name'}]} searchableKeys={["name"]} searchTitle="Find Users" />
             </Layer>
           </div>
 
@@ -101,7 +150,7 @@ export default class TutorialDropdown extends React.Component<any,any>{
           <p>To add custom content to a dropdown, just include it as a child of the component.</p>
           <div className="ptb20">
             <Layer className="p10 light">
-              <Dropdown title="Custom Content">
+              <Dropdown className='w200px' title="Custom Content">
                 <div className="w100 p10">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>

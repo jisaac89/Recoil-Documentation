@@ -114,7 +114,7 @@ export default class TutorialInput extends React.Component<any,any>{
   }
 
   setonChange() {
-    console.log('test');
+    // console.log('test');
   }
 
   render() {

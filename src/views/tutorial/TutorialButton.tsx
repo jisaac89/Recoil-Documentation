@@ -166,10 +166,10 @@ export default class TutorialButton extends React.Component<any,any>{
         <div>
             <h3>Default</h3>
             <Layer className="ptb20">
-              <Toolbar spacing>
-                <Button>Default Button</Button>
-                <Button theme="primary">Primary Button</Button>
-                <Button theme="error">Error Button</Button>
+              <Toolbar spacing flex={props.mobile}>
+                <Button>Default</Button>
+                <Button theme="primary">Primary</Button>
+                <Button theme="error">Error</Button>
               </Toolbar>
             </Layer>
 
@@ -201,7 +201,7 @@ export default class TutorialButton extends React.Component<any,any>{
             <h3>Sizes</h3>
             <p>Buttons come in a few sizes, small, default, large and xlarge.</p>
             <Layer className="ptb20">
-              <Toolbar spacing>
+              <Toolbar spacing vertical={props.mobile}>
                 <Button size="small">Small Button</Button>
                 <Button>Default</Button>
                 <Button size="large">Large Button</Button>
@@ -212,7 +212,7 @@ export default class TutorialButton extends React.Component<any,any>{
             <h3>States</h3>
             <p>Buttons can have different states. You can pass a <strong>disbaled</strong>,<strong>ghost</strong> or <strong>checked</strong> props to a Button.</p>
             <Layer className="ptb20">
-              <Toolbar spacing>
+              <Toolbar spacing vertical={props.mobile}>
                 <Button checked advanced>Checked Button</Button>
                 <Button disabled>Disabled Button</Button>
                 <Button simple>Ghost Button</Button>

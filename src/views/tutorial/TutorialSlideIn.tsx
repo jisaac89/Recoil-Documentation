@@ -91,12 +91,10 @@ export default class TutorialSlideIn extends React.Component<any,any>{
                 <Button onClick={this.toggleSlideIn.bind(this)}>Toggle SlideIn</Button>
                 <SlideIn from='bottom' if={this.state.paneOpen}>
                   <Layer className="light text-center p10">
-                    <Toolbar spacing>
-                      <Emerge delay={50} if={this.state.paneOpen}>
+                    <Toolbar flush spacing>
                           <Button onClick={this.toggleSlideIn.bind(this)} icon="user"></Button>
                           <Button onClick={this.toggleSlideIn.bind(this)} icon="search"></Button>
                           <Button onClick={this.toggleSlideIn.bind(this)} icon="plus"></Button>
-                      </Emerge>
                     </Toolbar>
                   </Layer>
                 </SlideIn>
