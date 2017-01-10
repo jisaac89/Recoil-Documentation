@@ -13,13 +13,17 @@
     "noLib": false,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
-    "allowJs": true
+    "allowJs": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules",
     "webpack.config.js",
     "dist",
-    "recoil/tsconfig.json",
     "recoil/webpack.config.js"
   ],
   "compileOnSave": false
