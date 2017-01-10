@@ -138,11 +138,10 @@ export default class TutorialDropdown extends React.Component<any,any>{
             </Layer>
           </div>
 
-          <h3>With Icon</h3>
-          <p>To add an icon to a dropdowns, just add an icon prop to it. Icon's are taken from font-awesome, you can omit the fa fa-, for example below it would be a Button compoent with a icon prop of "star"</p>
+          <h3>Multi Select Mobile Dropdown</h3>
           <div className="ptb20">
             <Layer className="p10 light">
-              <Dropdown mobile={props.mobile} className='w200px' icon="star" rowIsSelectable title="Select Users" dataSource={users} columns={[{name:'name'}]} searchableKeys={["name"]} searchTitle="Find Users" />
+              <Dropdown mobile={true} className='w200px' icon="star" rowIsSelectable title="Select Users" dataSource={users} columns={[{name:'name'}]} searchableKeys={["name"]} searchTitle="Find Users" />
             </Layer>
           </div>
 

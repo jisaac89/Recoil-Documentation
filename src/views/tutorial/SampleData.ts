@@ -9,66 +9,82 @@ const SampleData = [
   },
   {
     "index" : 2,
-    "name" : "Checkbox"
+    "name" : "Calendar"
   },
   {
     "index" : 3,
-    "name" : "Dropdown"
+    "name" : "Checkbox"
   },
   {
     "index" : 4,
-    "name" : "Emerge"
+    "name" : "DatePicker"
   },
   {
     "index" : 5,
-    "name" : "Input"
+    "name" : "Dropdown"
   },
   {
     "index" : 6,
-    "name" : "Layer"
+    "name" : "Emerge"
   },
   {
     "index" : 7,
-    "name" : "lLoading"
+    "name" : "Input"
   },
   {
     "index" : 8,
-    "name" : "Modal"
+    "name" : "Layer"
   },
   {
     "index" : 9,
-    "name" : "Open"
+    "name" : "Loading"
   },
   {
     "index" : 10,
-    "name" : "Selectable"
+    "name" : "Modal"
   },
   {
     "index" : 11,
-    "name" : "Shrink"
+    "name" : "Open"
   },
   {
     "index" : 12,
-    "name" : "SlideIn"
+    "name" : "Recoil"
   },
   {
     "index" : 13,
-    "name" : "Table"
+    "name" : "Selectable"
   },
   {
     "index" : 14,
-    "name" : "Toggle"
+    "name" : "Shrink"
   },
   {
     "index" : 15,
-    "name" : "Toolbar"
+    "name" : "SlideIn"
   },
   {
     "index" : 16,
-    "name" : "Transform"
+    "name" : "Stepper"
   },
   {
     "index" : 17,
+    "name" : "Table"
+  },
+  {
+    "index" : 18,
+    "name" : "Toggle"
+  },
+  {
+    "index" : 19,
+    "name" : "Toolbar"
+  },
+  {
+    "index" : 20,
+    "name" : "Transform"
+  },
+  {
+    "index" : 21,
     "name" : "Wizard"
   }
 ];

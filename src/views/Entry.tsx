@@ -21,6 +21,11 @@ import TutorialToolbar from './tutorial/TutorialToolbar';
 import TutorialTransform from './tutorial/TutorialTransform';
 import TutorialWizard from './tutorial/TutorialWizard';
 
+import TutorialCalendar from './tutorial/TutorialCalendar';
+import TutorialDatePicker from './tutorial/TutorialDatePicker';
+import TutorialRecoil from './tutorial/TutorialRecoil';
+import TutorialStepper from './tutorial/TutorialStepper';
+
 import SampleData from './tutorial/SampleData';
 
 export default class App extends React.Component<any, any> {
@@ -91,7 +96,9 @@ export default class App extends React.Component<any, any> {
               <Wizard fill flex slideIndex={slideIndex}>
                 <TutorialAlign scrollIf={slideIndex === 0} scrollToId={SampleData[slideIndex].name} />
                 <TutorialButton mobile={mobile} scrollIf={slideIndex === 1} scrollToId={SampleData[slideIndex].name}></TutorialButton>
+                <TutorialCalendar mobile={mobile}></TutorialCalendar>
                 <TutorialCheckbox scrollIf={slideIndex === 2} scrollToId={SampleData[slideIndex].name}></TutorialCheckbox>
+                <TutorialDatePicker mobile={mobile}></TutorialDatePicker>
                 <TutorialDropdown mobile={mobile} scrollIf={slideIndex === 3} scrollToId={SampleData[slideIndex].name}></TutorialDropdown>
                 <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 4}></TutorialEmerge>
                 <TutorialInput></TutorialInput>
@@ -99,9 +106,11 @@ export default class App extends React.Component<any, any> {
                 <TutorialLoading></TutorialLoading>
                 <TutorialModal toggleModal={this.toggleModal.bind(this)}></TutorialModal>
                 <TutorialOpen scrollIf={slideIndex === 4} scrollToId={SampleData[slideIndex].name}></TutorialOpen>
+                <TutorialRecoil mobile={mobile}></TutorialRecoil>
                 <TutorialSelectable></TutorialSelectable>
                 <TutorialShrink></TutorialShrink>
                 <TutorialSlideIn></TutorialSlideIn>
+                <TutorialStepper />
                 <TutorialTable></TutorialTable>
                 <TutorialToggle></TutorialToggle>
                 <TutorialToolbar></TutorialToolbar>
