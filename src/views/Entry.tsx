@@ -55,8 +55,8 @@ export default class App extends React.Component<any, any> {
 
   toggleModal(){
       this.setState({
-        showModal : !this.state.showModal,
-        showMenu : !this.state.showMenu
+        showModal :!this.state.showModal,
+        showMenu :  this.state.mobile ? false : !this.state.showMenu
       })
   }
 
@@ -100,7 +100,7 @@ export default class App extends React.Component<any, any> {
                 <TutorialCalendar mobile={mobile}></TutorialCalendar>
                 <TutorialCheckbox ></TutorialCheckbox>
                 <TutorialDatePicker mobile={mobile}></TutorialDatePicker>
-                <TutorialDropdown mobile={mobile} ></TutorialDropdown>
+                <TutorialDropdown mobile={mobile}></TutorialDropdown>
                 <TutorialEmerge ></TutorialEmerge>
                 <TutorialInput></TutorialInput>
                 <TutorialLayer></TutorialLayer>
