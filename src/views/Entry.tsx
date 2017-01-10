@@ -35,7 +35,7 @@ export default class App extends React.Component<any, any> {
 
     this.state = {
       slideIndex: 0,
-      showMenu: false,
+      showMenu: true,
       showModal: false,
       nightmode: false
     }
@@ -62,14 +62,15 @@ export default class App extends React.Component<any, any> {
 
   toggleMobile(isMobile){
     this.setState({
-      mobile: isMobile
+      mobile: isMobile,
+      showMenu:false
     })
   }
 
   gotoSlideIndex(item) {
     this.setState({
       slideIndex : item.index,
-      showMenu: false,
+      showMenu: this.state.mobile ? false : true,
       showModal: false
     })
   }
@@ -84,7 +85,7 @@ export default class App extends React.Component<any, any> {
             <SlideIn className='z5' if={!showModal} from={'top'}>
               <Layer fill theme="light">
                 <Toolbar size="small" block className="p10 border-bottom">
-                  <Button simple icon="bars" onClick={this.toggleMenu.bind(this)} />
+                  {this.state.mobile ? <Button simple icon="bars" onClick={this.toggleMenu.bind(this)} /> : null}
                   <h1 className="dinblock">Recoil</h1>
                   <Button href="https://www.github.com/jisaac89/recoil" theme="error" right icon="github">github</Button>
                   <Button onClick={this.toggleNightMode.bind(this)} right icon="moon-o" className="mr5"></Button>
@@ -94,18 +95,18 @@ export default class App extends React.Component<any, any> {
             </SlideIn>
             <Layer fill overflow className="ps5 ptb50 z4">
               <Wizard fill flex slideIndex={slideIndex}>
-                <TutorialAlign scrollIf={slideIndex === 0} scrollToId={SampleData[slideIndex].name} />
-                <TutorialButton mobile={mobile} scrollIf={slideIndex === 1} scrollToId={SampleData[slideIndex].name}></TutorialButton>
+                <TutorialAlign  />
+                <TutorialButton mobile={mobile}></TutorialButton>
                 <TutorialCalendar mobile={mobile}></TutorialCalendar>
-                <TutorialCheckbox scrollIf={slideIndex === 2} scrollToId={SampleData[slideIndex].name}></TutorialCheckbox>
+                <TutorialCheckbox ></TutorialCheckbox>
                 <TutorialDatePicker mobile={mobile}></TutorialDatePicker>
-                <TutorialDropdown mobile={mobile} scrollIf={slideIndex === 3} scrollToId={SampleData[slideIndex].name}></TutorialDropdown>
-                <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 6}></TutorialEmerge>
+                <TutorialDropdown mobile={mobile} ></TutorialDropdown>
+                <TutorialEmerge ></TutorialEmerge>
                 <TutorialInput></TutorialInput>
                 <TutorialLayer></TutorialLayer>
                 <TutorialLoading></TutorialLoading>
                 <TutorialModal toggleModal={this.toggleModal.bind(this)}></TutorialModal>
-                <TutorialOpen scrollIf={slideIndex === 4} scrollToId={SampleData[slideIndex].name}></TutorialOpen>
+                <TutorialOpen ></TutorialOpen>
                 <TutorialRecoil mobile={mobile}></TutorialRecoil>
                 <TutorialSelectable></TutorialSelectable>
                 <TutorialShrink></TutorialShrink>
