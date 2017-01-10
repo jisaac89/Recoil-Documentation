@@ -100,7 +100,7 @@ export default class App extends React.Component<any, any> {
                 <TutorialCheckbox scrollIf={slideIndex === 2} scrollToId={SampleData[slideIndex].name}></TutorialCheckbox>
                 <TutorialDatePicker mobile={mobile}></TutorialDatePicker>
                 <TutorialDropdown mobile={mobile} scrollIf={slideIndex === 3} scrollToId={SampleData[slideIndex].name}></TutorialDropdown>
-                <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 4}></TutorialEmerge>
+                <TutorialEmerge scrollIf={slideIndex === 5} scrollToId={SampleData[slideIndex].name} if={slideIndex === 6}></TutorialEmerge>
                 <TutorialInput></TutorialInput>
                 <TutorialLayer></TutorialLayer>
                 <TutorialLoading></TutorialLoading>

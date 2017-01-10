@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Align, Button, Toolbar, Checkbox, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
+import {Align, Button, Toolbar, Checkbox,Stepper, Table, Layer, Dropdown, Input, Wizard, Modal, Open, Emerge, SlideIn, Transform, Toggle, Shrink} from '../../../recoil/src/index';
 import TutorialView from './TutorialView';
 const ChecboxProperties = [
   {
@@ -57,48 +57,33 @@ export default class TutorialStepper extends React.Component<any,any>{
             <h3>Default</h3>
             <Layer className="ptb20">
               <Layer className="p10 light">
-                <Checkbox title={'Select All'} />
-                <Checkbox size="small" title={'Check All'} />
+                <Stepper title={'User Setup'} stepIndex={2}>
+                  <Button>Basic Info</Button>
+                  <Button>Contact Details</Button>
+                  <Button theme="success">Success!</Button>
+                </Stepper>
               </Layer>
             </Layer>
 
-            <h3>Checked</h3>
+            <h3>Vertical</h3>
             <Layer className="ptb20">
               <Layer className="p10 light">
-                <Checkbox checked />
+                <Stepper vertical stepIndex={0}>
+                  <Button simple className="p0">Basic Info</Button>
+                  <Button simple className="p0">Contact Details</Button>
+                  <Button simple className="p0">Success!</Button>
+                </Stepper>
               </Layer>
             </Layer>
 
-            <h3>Sizes</h3>
-            <Layer className="ptb20">
-              <Layer className="p10 light">
-                <Toolbar spacing>
-                  <Checkbox size="small" />
-                  <Checkbox />
-                  <Checkbox size="large" />
-                  <Checkbox size="xlarge" />
-                </Toolbar>
-              </Layer>
-            </Layer>
-
-            <h3>Themes</h3>
-            <Layer className="ptb20">
-              <Layer className="p10 light">
-                <Toolbar spacing>
-                  <Checkbox theme="primary" />
-                  <Checkbox theme="error" />
-                  <Checkbox theme="success" />
-                </Toolbar>
-              </Layer>
-            </Layer>
         </div>
       )
     }
 
     return (
       <TutorialView 
-        description="The Checkbox component is an advanced version of the standard input type='checkbox' control."
-        Id="Checkbox"
+        description="The Stepper component ."
+        Id="Stepper"
         columnData={ChecboxProperties}
         examples={example}
         scrollIf={props.scrollIf}
