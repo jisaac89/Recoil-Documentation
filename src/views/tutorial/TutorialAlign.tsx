@@ -101,26 +101,7 @@ export default class TutorialAlign extends React.Component<any,any>{
               </div>
             </div>
 
-            <h3>Multiple Aligns</h3>
-            <p>Below shows an example using multiple Align components to achieve the desired effect.</p>
-            <div className="ptb20">
-              <div className="dark p5 h300px">
-                <Align columns={this.state.columns} margin={"5px"}>
-                  <Align margin={"5px"} vertical>
-                    <Layer theme="light" className="p10" fill>1</Layer>
-                    <Layer theme="light" className="p10" fill>2</Layer>
-                    <Layer theme="light" className="p10" fill>3</Layer>
-                  </Align>
-                  <Align margin={"5px"} vertical>
-                    <Layer theme="light" className="p10" fill>4</Layer>
-                    <Layer theme="light" className="p10" fill>5</Layer>
-                  </Align>
-                  <Layer fill>
-                    <Button fill icon="star" />
-                  </Layer>
-                </Align>
-              </div>
-            </div>
+
         </div>
       )
     }
@@ -137,3 +118,25 @@ export default class TutorialAlign extends React.Component<any,any>{
     )
   }
 }
+
+
+            // <h3>Multiple Aligns</h3>
+            // <p>Below shows an example using multiple Align components to achieve the desired effect.</p>
+            // <div className="ptb20">
+            //   <div className="dark p5 h300px">
+            //     <Align columns={this.state.columns} margin={"5px"}>
+            //       <Align margin={"5px"} vertical>
+            //         <Layer theme="light" className="p10" fill>1</Layer>
+            //         <Layer theme="light" className="p10" fill>2</Layer>
+            //         <Layer theme="light" className="p10" fill>3</Layer>
+            //       </Align>
+            //       <Align margin={"5px"} vertical>
+            //         <Layer theme="light" className="p10" fill>4</Layer>
+            //         <Layer theme="light" className="p10" fill>5</Layer>
+            //       </Align>
+            //       <Layer fill>
+            //         <Button fill icon="star" />
+            //       </Layer>
+            //     </Align>
+            //   </div>
+            // </div>

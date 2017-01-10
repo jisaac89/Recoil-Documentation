@@ -56,7 +56,7 @@ export default class App extends React.Component<any, any> {
   toggleModal(){
       this.setState({
         showModal : !this.state.showModal,
-        showMenu : false
+        showMenu : !this.state.showMenu
       })
   }
 
