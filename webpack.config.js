@@ -7,11 +7,9 @@ var config = {
   devtool: 'eval-source-map',
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
-    hot: true
+    contentBase: './'
   },
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000',
     'babel-polyfill',
     './src/index.tsx'
   ],
