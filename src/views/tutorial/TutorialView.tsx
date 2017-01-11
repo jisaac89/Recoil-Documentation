@@ -54,7 +54,7 @@ export default class TutorialView extends React.Component<ITutorialViewProps,any
     })
   }
 
-  render() {
+  detailTemplate(item){
 
     const self = this;
     const props = self.props;
@@ -70,6 +70,24 @@ export default class TutorialView extends React.Component<ITutorialViewProps,any
       {name: 'name'}
     ]
 
+    return(
+      <Layer theme="light" className="pl50">
+        <small><strong>Values:</strong> {item.type}</small><br/>
+        <small><strong>Description:</strong> {item.description}</small>
+      </Layer>
+    )
+  }
+
+  render() {
+
+    const self = this;
+    const props = self.props;
+    let state = self.state;
+
+    const columns = [
+      {name: 'name'}
+    ]
+    
     return (
       <Layer fill offset={-100} flex scrollY scrollIf={props.scrollIf} scrollToId={props.scrollToId}>
           <div className="p10">
@@ -88,26 +106,31 @@ export default class TutorialView extends React.Component<ITutorialViewProps,any
 
           <Layer className="ptb10">
             <h2 className="pb10">Props</h2>
-            <Button checked={this.state.showProps} onClick={this.toggleShowProps.bind(this)}>Toggle Options</Button>
-            <Open if={this.state.showProps}>
               <Layer className="ptb10">
-                <Table sortable columns={this.props.mobile ? mobileColumns : columns} dataSource={props.columnData} />
+                <Table 
+                  sortable 
+                  columns={columns}
+                  dataSource={props.columnData}
+                  detailTemplate={this.detailTemplate.bind(this)}
+                  pageSize={props.columnData.length}
+                />
               </Layer>
-            </Open>
           </Layer>
 
-          <Layer className="ptb10">
-            <h2 className="pb10">Video</h2>
-            <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
-            <Open if={this.state.showVideo}>
-              <Layer className="ptb10">
-                {props.video ? props.video : 'Coming soon...'}
-              </Layer>
-            </Open>
-          </Layer>
+
 
         </div>
       </Layer>
     )
   }
 }
+
+  // <Layer className="ptb10">
+  //   <h2 className="pb10">Video</h2>
+  //   <Button checked={this.state.showVideo} onClick={this.toggleShowVideo.bind(this)}>Toggle Video Tutorial</Button>
+  //   <Open if={this.state.showVideo}>
+  //     <Layer className="ptb10">
+  //       {props.video ? props.video : 'Coming soon...'}
+  //     </Layer>
+  //   </Open>
+  // </Layer>

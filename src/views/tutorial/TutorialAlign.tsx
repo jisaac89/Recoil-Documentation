@@ -7,9 +7,9 @@ import TutorialView from './TutorialView';
 const AlignProperties = [
   {
     name :'margin',
-    type: 'number',
+    type: 'number, px, %',
     options: '',
-    description: 'Defines the margin between the aligned components.'
+    description: 'Defines the margin width in px, %, etc.'
   },
   {
     name :'className',
@@ -21,7 +21,13 @@ const AlignProperties = [
     name :'vertical',
     type: 'boolean',
     options: 'true, false',
-    description: 'Defines if the components are aligned vertically.'
+    description: 'Defines if the children are aligned vertically.'
+  },
+  {
+    name :'columns',
+    type: 'Array',
+    options: 'true, false',
+    description: 'Set an array of numbers to define each column width. e.g. 3 columns with the left most expanded would be [1,1,2]'
   }
 ]
 
