@@ -61,31 +61,21 @@ export default class TutorialWizard extends React.Component<any,any>{
         <div>
             <h3>Default</h3>
             <Layer className="h300px p20 mb10" theme="dark">
-              <Wizard fill slideIndex={this.state.slideIndex}>
+              <Wizard paginate fill slideIndex={this.state.slideIndex}>
                 <Layer fill theme="light p20">1</Layer>
                 <Layer fill theme="light p20">2</Layer>
                 <Layer fill theme="light p20">3</Layer>
               </Wizard>
             </Layer>
-            <Toolbar flush block>
-                <Button advanced checked={state.slideIndex === 0} onClick={this.gotoSlideIndex.bind(this, 0)}>1</Button>
-                <Button advanced checked={state.slideIndex === 1} onClick={this.gotoSlideIndex.bind(this, 1)}>2</Button>
-                <Button advanced checked={state.slideIndex === 2} onClick={this.gotoSlideIndex.bind(this, 2)}>3</Button>
-            </Toolbar>
 
             <h3 className="pt20 pb10">Vertical</h3>
             <Layer className="h300px p20 mb10" theme="dark">
-              <Wizard vertical fill slideIndex={this.state.slideIndex2}>
+              <Wizard paginate vertical fill slideIndex={this.state.slideIndex2}>
                 <Layer fill theme="light p20">1</Layer>
                 <Layer fill theme="light p20">2</Layer>
                 <Layer fill theme="light p20">3</Layer>
               </Wizard>
             </Layer>
-            <Toolbar flush block>
-                <Button advanced checked={state.slideIndex2 === 0} onClick={this.gotoSlideIndex2.bind(this, 0)}>1</Button>
-                <Button advanced checked={state.slideIndex2 === 1} onClick={this.gotoSlideIndex2.bind(this, 1)}>2</Button>
-                <Button advanced checked={state.slideIndex2 === 2} onClick={this.gotoSlideIndex2.bind(this, 2)}>3</Button>
-            </Toolbar>
         </div>
       )
     }
